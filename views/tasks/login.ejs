@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Create task</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  
+  </head>
+  <body>
+    <div class="container">
+
+      <h2>Log in</h2>
+      <form action="/tasks/login_user" method="post">
+        <table>
+          <tbody>
+            <tr>
+              <td>Email<span style="color: red;font-weight:900;">*</span> </td>  
+              <td> <input type="email" name="email" placeholder="please enter your email" required /></td>
+            </tr>
+            <tr>
+              <td>Password<span style="color: red;font-weight:900;">*</span> </td>  
+              <td> <input type="password" name="password" placeholder="please enter your password" required /></td>
+            </tr>
+              <td colspan="2"><button type="submit">submit</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+      <button id="createButton" onclick="location.href='/tasks';">Tasks</button>
+      <button id="createButton" onclick="location.href='/';">Home</button>
+    </div>
+  </body>
+</html>
