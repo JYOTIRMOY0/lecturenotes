@@ -4,28 +4,7 @@ const jwt = require('jsonwebtoken');
 
 
 //register
-exports.register = (req, res) => {
-    const {name, email , password} = req.body
-    console.log(req.body)
-    const user = new clientSchema({
-        name,
-        email,
-        password
-    })
 
-    user.save((err, success) => {
-        if(err) {
-            console.log(err)
-            return res.status(404).json({
-                error: "something wrong"
-            })
-        }
-            
-        return res.status(200).json({
-            message: "register success, now you can go back and login"
-        })
-    })
-};
 
 // pre signup for registration email activation
 exports.login_u = (req, res) => {
@@ -58,4 +37,27 @@ exports.login_u = (req, res) => {
     });
 
   
+};
+
+exports.register = (req, res) => {
+    const {name, email , password} = req.body
+    console.log(req.body)
+    const user = new clientSchema({
+        name,
+        email,
+        password
+    })
+
+    user.save((err, success) => {
+        if(err) {
+            console.log(err)
+            return res.status(404).json({
+                error: "something wrong"
+            })
+        }
+            
+        return res.status(200).json({
+            message: "register success, now you can go back and login"
+        })
+    })
 };
